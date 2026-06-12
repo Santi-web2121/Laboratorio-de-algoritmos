@@ -1,0 +1,402 @@
+﻿1. using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int op1 = 0, op2 = 0, op3 = 0;
+        string voto;
+
+
+        do
+        {
+            Console.WriteLine("1 Pizza");
+            Console.WriteLine("2 Hamburguesa");
+            Console.WriteLine("3 Empanadas");
+            Console.Write("Voto (o terminar): ");
+            voto = Console.ReadLine();
+
+
+            if (voto == "1")
+                op1++;
+            else if (voto == "2")
+                op2++;
+            else if (voto == "3")
+                op3++;
+
+
+        } while (voto != "terminar");
+
+
+        if (op1 > op2 && op1 > op3)
+            Console.WriteLine("Gano Pizza");
+        else if (op2 > op1 && op2 > op3)
+            Console.WriteLine("Gano Hamburguesa");
+        else if (op3 > op1 && op3 > op2)
+            Console.WriteLine("Gano Empanadas");
+        else
+            Console.WriteLine("Empate");
+    }
+}
+B) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int num = int.Parse(Console.ReadLine());
+
+
+        if (num < 1)
+        {
+            Console.WriteLine("No se puede");
+        }
+        else
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                if (i % 2 != 0)
+                    Console.WriteLine(i);
+            }
+        }
+    }
+}
+
+C) using System;
+
+
+class Program
+{
+static void Main()
+{
+string palabra = Console.ReadLine();
+char letra = char.Parse(Console.ReadLine());
+
+
+int contador = 0;
+
+
+for (int i = 0; i < palabra.Length; i++)
+{
+if (palabra[i] == letra)
+contador++;
+}
+
+
+Console.WriteLine(contador);
+}
+} 
+
+D) using System;
+
+
+class Program
+{
+static void Main()
+{
+double saldo = 1000;
+int opcion;
+
+
+do
+{
+Console.WriteLine("Saldo: $" + saldo);
+Console.WriteLine("1 Depositar");
+Console.WriteLine("2 Retirar");
+Console.WriteLine("3 Salir");
+
+
+opcion = int.Parse(Console.ReadLine());
+
+
+if (opcion == 1)
+{
+double monto = double.Parse(Console.ReadLine());
+saldo += monto;
+}
+else if (opcion == 2)
+{
+double monto = double.Parse(Console.ReadLine());
+
+
+if (monto <= saldo)
+saldo -= monto;
+else
+Console.WriteLine("Saldo insuficiente");
+}
+
+
+} while (opcion != 3);
+}
+} 
+
+E) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int contador = 0;
+        int numero = 1;
+
+
+        while (contador < 50)
+        {
+            if ((numero % 2 == 0 || numero % 5 == 0) &&
+                !(numero % 2 == 0 && numero % 5 == 0))
+            {
+                Console.WriteLine(numero);
+                contador++;
+            }
+
+
+            numero++;
+        }
+    }
+}
+
+F) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string palabra = Console.ReadLine().ToUpper();
+
+
+        for (int i = 0; i < palabra.Length; i++)
+        {
+            int posicion = palabra[i] - 'A' + 1;
+            Console.Write(posicion + " ");
+        }
+    }
+}
+
+G) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int secreto = 25;
+        int numero;
+        int intentos = 0;
+
+
+        do
+        {
+            numero = int.Parse(Console.ReadLine());
+            intentos++;
+
+
+            if (numero < secreto)
+                Console.WriteLine("Mas grande");
+            else if (numero > secreto)
+                Console.WriteLine("Mas chico");
+
+
+        } while (numero != secreto);
+
+
+        Console.WriteLine("Adivinaste en " + intentos + " intentos");
+    }
+}
+
+H) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string frase = Console.ReadLine();
+
+
+        string[] palabras = frase.Split(' ');
+
+
+        for (int i = 0; i < palabras.Length; i++)
+        {
+            char[] letras = palabras[i].ToCharArray();
+            Array.Reverse(letras);
+
+
+            Console.Write(new string(letras) + " ");
+        }
+    }
+}
+
+I) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string palabra = Console.ReadLine();
+
+
+        for (int i = 0; i < palabra.Length; i++)
+        {
+            int contador = 0;
+
+
+            for (int j = 0; j < palabra.Length; j++)
+            {
+                if (palabra[i] == palabra[j])
+                    contador++;
+            }
+
+
+            Console.WriteLine(palabra[i] + ": " + contador);
+        }
+    }
+}
+
+J) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string usuario = "admin";
+        string contraseña = "1234";
+
+
+        int intentos = 0;
+
+
+        while (intentos < 3)
+        {
+            Console.Write("Usuario: ");
+            string u = Console.ReadLine();
+
+
+            Console.Write("Contraseña: ");
+            string c = Console.ReadLine();
+
+
+            if (u == usuario && c == contraseña)
+            {
+                Console.WriteLine("Bienvenido");
+                break;
+            }
+
+
+            intentos++;
+        }
+    }
+}
+
+K) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        int num = int.Parse(Console.ReadLine());
+
+
+        if (num >= 0 && num <= 25)
+            Console.WriteLine("0-25");
+        else if (num <= 50)
+            Console.WriteLine("26-50");
+        else if (num <= 75)
+            Console.WriteLine("51-75");
+        else if (num <= 100)
+            Console.WriteLine("76-100");
+    }
+}
+
+I) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        double peso = double.Parse(Console.ReadLine());
+        double altura = double.Parse(Console.ReadLine());
+
+
+        double imc = peso / (altura * altura);
+
+
+        Console.WriteLine(imc);
+
+
+        if (imc < 18.5)
+            Console.WriteLine("Bajo peso");
+        else if (imc < 25)
+            Console.WriteLine("Normal");
+        else if (imc < 30)
+            Console.WriteLine("Sobrepeso");
+        else
+            Console.WriteLine("Obesidad");
+    }
+}
+
+M) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string palabra = Console.ReadLine();
+
+
+        for (int i = 1; i <= palabra.Length; i++)
+        {
+            Console.WriteLine(palabra.Substring(0, i));
+        }
+    }
+}
+
+N) using System;
+
+
+class Program
+{
+    static void Main()
+    {
+        string frase;
+
+
+        do
+        {
+            frase = Console.ReadLine();
+
+
+            if (frase != "agusfortnite2008")
+            {
+                string[] vocales = { "a", "e", "i", "o", "u" };
+
+
+                for (int i = 0; i < vocales.Length; i++)
+                {
+                    string resultado = frase;
+
+
+                    resultado = resultado.Replace("a", vocales[i]);
+                    resultado = resultado.Replace("e", vocales[i]);
+                    resultado = resultado.Replace("i", vocales[i]);
+                    resultado = resultado.Replace("o", vocales[i]);
+                    resultado = resultado.Replace("u", vocales[i]);
+
+
+                    Console.WriteLine(resultado);
+                }
+            }
+
+
+        } while (frase != "agusfortnite2008");
+    }
+}
