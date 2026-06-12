@@ -1,0 +1,397 @@
+﻿A) Random r = new Random();
+
+
+int secreto = r.Next(1, 11);
+int numero;
+
+
+do
+{
+    Console.Write("Ingrese un número del 1 al 10: ");
+    numero = int.Parse(Console.ReadLine());
+
+
+    if (numero < secreto)
+    {
+        Console.WriteLine("El numero es mayor");
+    }
+    else if (numero > secreto)
+    {
+        Console.WriteLine("El numero es menor");
+    }
+
+
+} while (numero != secreto);
+
+
+Console.WriteLine("Adivinaste");
+
+B) Console.Write("Ingrese un número: ");
+int num = int.Parse(Console.ReadLine());
+
+
+for (int i = 1; i <= num; i++)
+{
+    if (num % i == 0)
+    {
+        Console.WriteLine(i);
+    }
+}
+
+C) int a = 0;
+int b = 1;
+
+
+for (int i = 1; i <= 20; i++)
+{
+    Console.WriteLine(a);
+
+
+    int c = a + b;
+    a = b;
+    b = c;
+}
+
+D) Console.WriteLine("1-Suma");
+Console.WriteLine("2-Resta");
+Console.WriteLine("3-Multiplicación");
+Console.WriteLine("4-División");
+
+
+int opcion = int.Parse(Console.ReadLine());
+
+
+Console.Write("Numero 1: ");
+double n1 = double.Parse(Console.ReadLine());
+
+
+Console.Write("Numero 2: ");
+double n2 = double.Parse(Console.ReadLine());
+
+
+if (opcion == 1)
+{
+    Console.WriteLine(n1 + n2);
+}
+else if (opcion == 2)
+{
+    Console.WriteLine(n1 - n2);
+}
+else if (opcion == 3)
+{
+    Console.WriteLine(n1 * n2);
+}
+else if (opcion == 4)
+{
+    Console.WriteLine(n1 / n2);
+}
+
+E) Console.Write("Ingrese un numero: ");
+int num = int.Parse(Console.ReadLine());
+
+
+long factorial = 1;
+
+
+for (int i = 1; i <= num; i++)
+{
+    factorial *= i;
+}
+
+
+Console.WriteLine("Factorial: " + factorial);
+
+F) string[] nombres = new string[5];
+
+
+for (int i = 0; i < 5; i++)
+{
+    Console.Write("Nombre: ");
+    nombres[i] = Console.ReadLine();
+}
+
+
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine("Turno " + (i + 1) + ": " + nombres[i]);
+}
+
+G) int contador = 0;
+
+
+for (int i = 1; i <= 100; i++)
+{
+    if (i % 2 == 0)
+    {
+        contador++;
+    }
+}
+
+
+Console.WriteLine("Hay " + contador + " números pares");
+
+h) string respuesta;
+
+
+do
+{
+    Console.Write("Celsius: ");
+    double c = double.Parse(Console.ReadLine());
+
+
+    double f = (c * 9 / 5) + 32;
+
+
+    Console.WriteLine("Fahrenheit: " + f);
+
+
+    Console.Write("Continuar? (si/no): ");
+    respuesta = Console.ReadLine();
+
+
+} while (respuesta != "no");
+
+i) Console.Write("Ingrese un numero: ");
+int num = int.Parse(Console.ReadLine());
+
+
+bool primo = true;
+
+
+if (num <= 1)
+{
+    primo = false;
+}
+
+
+for (int i = 2; i < num; i++)
+{
+    if (num % i == 0)
+    {
+        primo = false;
+    }
+}
+
+
+if (primo)
+{
+    Console.WriteLine("Es primo");
+}
+else
+{
+    Console.WriteLine("No es primo");
+}
+
+j) string[] nombres = new string[100];
+int cantidad = 0;
+string nombre;
+
+
+do
+{
+    Console.Write("Nombre: ");
+    nombre = Console.ReadLine();
+
+
+    if (nombre != "fin")
+    {
+        nombres[cantidad] = nombre;
+        cantidad++;
+    }
+
+
+} while (nombre != "fin");
+
+
+for (int i = 0; i < cantidad; i++)
+{
+    Console.WriteLine("Hola " + nombres[i]);
+}
+
+k) string[] nombres = new string[100];
+int cantidad = 0;
+bool repetido = false;
+
+
+while (!repetido)
+{
+    Console.Write("Nombre: ");
+    string nombre = Console.ReadLine();
+
+
+    for (int i = 0; i < cantidad; i++)
+    {
+        if (nombres[i] == nombre)
+        {
+            repetido = true;
+        }
+    }
+
+
+    if (!repetido)
+    {
+        nombres[cantidad] = nombre;
+        cantidad++;
+    }
+}
+
+
+Console.WriteLine("Ingresó " + cantidad + " nombres antes del repetido");
+
+l) for (int i = 100; i <= 200; i++)
+{
+    if (i % 7 == 0 && i % 10 == 3)
+    {
+        Console.WriteLine(i);
+    }
+}
+
+M) double total = 0;
+int productos = 0;
+
+
+while (total <= 1000)
+{
+    Console.Write("Precio: ");
+    double precio = double.Parse(Console.ReadLine());
+
+
+    total += precio;
+    productos++;
+}
+
+
+Console.WriteLine("Productos cargados: " + productos);
+
+N) Console.Write("Nombre: ");
+string nombre = Console.ReadLine();
+
+
+Console.Write("Edad: ");
+string edadTexto = Console.ReadLine();
+
+
+Console.Write("Mail: ");
+string mail = Console.ReadLine();
+
+
+int edad;
+
+
+if (int.TryParse(edadTexto, out edad) && mail.Contains("@"))
+{
+    Console.WriteLine("Datos válidos");
+}
+else
+{
+    Console.WriteLine("Datos inválidos");
+}
+
+O) Console.Write("Ingrese un numero: ");
+string numero = Console.ReadLine();
+
+
+for (int i = 0; i < numero.Length; i++)
+{
+    Console.WriteLine(numero[i]);
+}
+
+P) int usuario = 0;
+int computadora = 0;
+
+
+Random r = new Random();
+
+
+for (int i = 1; i <= 3; i++)
+{
+    Console.Write("1-Piedra 2-Papel 3-Tijera: ");
+    int jugada = int.Parse(Console.ReadLine());
+
+
+    int pc = r.Next(1, 4);
+
+
+    if ((jugada == 1 && pc == 3) ||
+        (jugada == 2 && pc == 1) ||
+        (jugada == 3 && pc == 2))
+    {
+        usuario++;
+    }
+    else if (jugada != pc)
+    {
+        computadora++;
+    }
+}
+
+
+if (usuario > computadora)
+{
+    Console.WriteLine("Ganaste");
+}
+else if (computadora > usuario)
+{
+    Console.WriteLine("Ganó la computadora");
+}
+else
+{
+    Console.WriteLine("Empate");
+}
+
+Q) Random r = new Random();
+
+
+int mayores = 0;
+
+
+for (int i = 1; i <= 10; i++)
+{
+    int num = r.Next(1, 101);
+
+
+    Console.WriteLine(num);
+
+
+    if (num > 50)
+    {
+        mayores++;
+    }
+}
+
+
+Console.WriteLine("Mayores a 50: " + mayores);
+
+R) double suma = 0;
+double mejorNota = 0;
+string mejorAlumno = "";
+
+
+for (int i = 1; i <= 5; i++)
+{
+    Console.Write("Nombre: ");
+    string nombre = Console.ReadLine();
+
+
+    Console.Write("Nota: ");
+    double nota = double.Parse(Console.ReadLine());
+
+
+    suma += nota;
+
+
+    if (i == 1 || nota > mejorNota)
+    {
+        mejorNota = nota;
+        mejorAlumno = nombre;
+    }
+}
+
+
+Console.WriteLine("Promedio: " + (suma / 5));
+Console.WriteLine("Mejor alumno: " + mejorAlumno);
+
+
+S) for (char letra = 'Z'; letra >= 'A'; letra--)
+{
+    Console.WriteLine(letra);
+}
